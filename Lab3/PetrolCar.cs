@@ -2,10 +2,10 @@
 
 namespace Lab3
 {
-    class PetrolCar : IPetrolCar, ICar
+    internal class PetrolCar : IPetrolCar, ICar
     {
-        private bool _isStarted;
         private bool _isFueled;
+        private bool _isStarted;
 
         public PetrolCar()
         {
@@ -13,61 +13,6 @@ namespace Lab3
             _isFueled = false;
         }
 
-        void IPetrolCar.Start()
-        {
-            if (!_isStarted)
-            {
-                Console.WriteLine("Starting car");
-                _isStarted = true;
-            }
-            else
-            {
-                Console.WriteLine("Car already started");
-            }
-        }
-
-        void IPetrolCar.Stop()
-        {
-            if (_isStarted)
-            {
-                Console.WriteLine("Stopping car");
-                _isStarted = false;
-            }
-            else
-            {
-                Console.WriteLine("Car is not started");
-            }
-        }
-
-        void IPetrolCar.Fuel()
-        {
-            if (!_isFueled)
-            {
-                Console.WriteLine("Fueling up car with petrol");
-                _isFueled = true;
-            }
-            else
-            {
-                Console.WriteLine("Car is already fueled up with petrol");
-            }
-        }
-
-        void IPetrolCar.Drive()
-        {
-            if (_isStarted && _isFueled)
-            {
-                Console.WriteLine("Driving on petrol");
-                _isFueled = false;
-            }
-            else if(!_isFueled)
-            {
-                Console.WriteLine("Not enough petrol, fuel up");
-            }
-            else
-            {
-                Console.WriteLine("Car is not started");
-            }
-        }
         void ICar.Start()
         {
             if (!_isStarted)
@@ -94,7 +39,7 @@ namespace Lab3
             }
         }
 
-        void ICar.Fuel()
+        public void Fuel()
         {
             if (!_isFueled)
             {
@@ -107,14 +52,14 @@ namespace Lab3
             }
         }
 
-        void ICar.Drive()
+        public void Drive()
         {
             if (_isStarted && _isFueled)
             {
                 Console.WriteLine("Driving on petrol");
                 _isFueled = false;
             }
-            else if(!_isFueled)
+            else if (!_isFueled)
             {
                 Console.WriteLine("Not enough petrol, fuel up");
             }

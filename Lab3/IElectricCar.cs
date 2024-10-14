@@ -1,9 +1,7 @@
 ﻿namespace Lab3
 {
-    internal interface ICar
+    internal interface IElectricCar
     {
-        void Start();
-        void Stop();
         void Fuel();
         void Drive();
     }

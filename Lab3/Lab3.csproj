@@ -40,10 +40,15 @@
         <Reference Include="System.Xml"/>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="ElectricCar.cs" />
-        <Compile Include="GasCar.cs" />
-        <Compile Include="ICar.cs" />
-        <Compile Include="PetrolCar.cs" />
+        <Compile Include="ElectricCar.cs"/>
+        <Compile Include="GasCar.cs"/>
+        <Compile Include="ICar.cs"/>
+        <Compile Include="IElectricCar.cs"/>
+        <Compile Include="IGasCar.cs"/>
+        <Compile Include="IPetrolCar.cs"/>
+        <Compile Include="PetrolCar.cs"/>
+        <Compile Include="PetrolElectricCar.cs"/>
+        <Compile Include="PetrolGasCar.cs"/>
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
