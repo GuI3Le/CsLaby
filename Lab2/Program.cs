@@ -230,9 +230,6 @@ namespace Lab2
                 car.TestDrive(car);
                 Console.WriteLine();
             }
-
-
-
         }
         }
     
