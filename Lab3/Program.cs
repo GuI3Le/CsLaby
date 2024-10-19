@@ -30,25 +30,20 @@ namespace Lab3
 
         public static void Main(string[] args)
         {
-            var petrolCar = new PetrolCar();
-            var electricCar = new ElectricCar();
-            var gasCar = new GasCar();
-            var petrolGasCar = new PetrolGasCar();
-            var petrolElectricCar = new PetrolElectricCar();
-            // petrolGasCar = (petrolCar);
-            var carList = new List<ICar>();
-            carList.Add(petrolCar);
-            carList.Add(electricCar);
-            carList.Add(gasCar);
-            carList.Add(petrolGasCar);
-            carList.Add(petrolElectricCar);
+            var carList = new List<ICar>
+            {
+                new PetrolCar(),
+                new ElectricCar(),
+                new GasCar(),
+                new PetrolElectricCar(),
+                new PetrolGasCar()
+            };
             foreach (var car in carList)
             {
                 TestDrive(car);
                 Console.WriteLine();
             }
-
-            Test();
+            // Test();
         }
     }
 }
