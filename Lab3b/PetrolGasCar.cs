@@ -97,6 +97,10 @@ namespace Lab3b
                 ((IGasCar)this).Fuel();
             }
         }
+        void Fuel()
+        {
+            ((ICar)this).Fuel();
+        }
 
         void IPetrolCar.Drive()
         {
@@ -146,6 +150,11 @@ namespace Lab3b
             {
                 Console.WriteLine("Combustion engine is not running");
             }
+        }
+
+        void Drive()
+        {
+            ((ICar)this).Drive();
         }
     }
 }

@@ -6,13 +6,13 @@ namespace Lab3b
     {
         private bool _isCombustionEngineRunning;
 
+        private bool _isPetrolTankFull;
+
         public bool IsCombustionEngineRunning
         {
             get => _isCombustionEngineRunning;
             set => _isCombustionEngineRunning = value;
         }
-
-        private bool _isPetrolTankFull;
 
         public bool IsPetrolTankFull
         {

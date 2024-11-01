@@ -69,14 +69,16 @@ namespace Lab3b
 
         void ICar.Start()
         {
-            if (!_electricEngineRunning && !_combustionEngineRunning)
+            if (_electricEngineRunning && _combustionEngineRunning)
             {
-                ((IElectricCar)this).Start();
-                ((IPetrolCar)this).Start();
+                Console.WriteLine("Combustion and electric engine are already running");
+
+                
             }
             else
             {
-                Console.WriteLine("Combustion and electric engine are already running");
+                ((IElectricCar)this).Start();
+                ((IPetrolCar)this).Start();
             }
         }
 
