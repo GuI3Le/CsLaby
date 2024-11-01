@@ -43,132 +43,111 @@ namespace Lab3b
 
         void IPetrolCar.Start()
         {
-            if (!_combustionEngineRunning)
-            {
+            
                 _combustionEngineRunning = true;
                 Console.WriteLine("Starting combustion engine");
-            }
-            else
-            {
-                Console.WriteLine("Combustion engine already running");
-            }
+            
         }
 
         void IElectricCar.Start()
         {
-            if (!_electricEngineRunning)
-            {
+           
                 _electricEngineRunning=true;
                 Console.WriteLine("Starting electric engine");
-            }
-            else
-            {
-                Console.WriteLine("Electric engine is already running");
-            }
+            
         }
 
         void ICar.Start()
         {
-            if (_electricEngineRunning && _combustionEngineRunning)
-            {
-                Console.WriteLine("Combustion and electric engine are already running");
-
-                
-            }
-            else
-            {
-                ((IElectricCar)this).Start();
-                ((IPetrolCar)this).Start();
-            }
+                _combustionEngineRunning = true;
+                _electricEngineRunning=true;
+                Console.WriteLine("Starting electric and combustion engine");
         }
 
         public void Start()
         {
-            ((ICar)this).Start();
+            if (!_electricEngineRunning && !_electricEngineRunning)
+            {
+                ((ICar)this).Start();
+            }else if (!_electricEngineRunning)
+            {
+                ((IElectricCar)this).Start();
+            }else if (!_petrolTankFull)
+            {
+                ((IPetrolCar)this).Start();
+            }
+            else
+            {
+                Console.WriteLine("Electric and petrol engine are already running");
+            }
         }
 
         void IPetrolCar.Stop()
         {
-            if (_combustionEngineRunning)
-            {
                 _combustionEngineRunning = false;
                 Console.WriteLine("Stopping combustion engine");
-            }
-            else
-            {
-                Console.WriteLine("Combustion engine is not started");
-            }
         }
 
         void IElectricCar.Stop()
         {
-            if (_electricEngineRunning)
-            {
+            
                 _electricEngineRunning=false;
                 Console.WriteLine("Stopping electric engine");
-            }
-            else
-            {
-                Console.WriteLine("Electric engine is not running");
-            }
+            
         }
 
         void ICar.Stop()
         {
-            if (_electricEngineRunning && _combustionEngineRunning)
-            {
-                ((IElectricCar)this).Stop();
-                ((IPetrolCar)this).Stop();
-            }else if (_electricEngineRunning)
-            {
-                ((IElectricCar)this).Stop();
-            }else if (_electricEngineRunning)
-            {
-                ((IPetrolCar)this).Stop();
-            }
-            else
-            {
-                Console.WriteLine("Neither petrol nor electric engine is running");
-            }
+            _electricEngineRunning=false;
+            _combustionEngineRunning=false;
+            Console.WriteLine("Stopping combustion and electric engine");
         }
 
         public void Stop()
         {
-            ((ICar)this).Stop();
+            if (_electricEngineRunning && _combustionEngineRunning)
+            {
+                ((ICar)this).Stop();
+            }else if (_electricEngineRunning)
+            {
+                ((IElectricCar)this).Stop();
+            }else if (_petrolTankFull)
+            {
+                ((IPetrolCar)this).Stop();
+            }
+            else
+            {
+                Console.WriteLine("Electric and petrol engine are already stopped");
+            }
         }
 
         void IPetrolCar.Fuel()
         {
-            if (!_petrolTankFull)
-            {
+            
                 _petrolTankFull = true;
                 Console.WriteLine("Fueling up petrol tank");
-            }
-            else
-            {
-                Console.WriteLine("Petrol tank is already full");
-            }
         }
 
         void IElectricCar.Fuel()
         {
-            if (!_batteryCharged)
-            {
+            
                 _batteryCharged=true;
                 Console.WriteLine("Charging battery");
-            }
-            else
-            {
-                Console.WriteLine("Battery is already charged");
-            }
+            
         }
 
         void ICar.Fuel()
         {
+            _batteryCharged=true;
+            _petrolTankFull=true;
+            Console.WriteLine("Charging battery and fueling up with petrol");
+        }
+
+        public void Fuel()
+        {
             if (!_batteryCharged && !_petrolTankFull)
             {
-                ((IPetrolCar)this).Fuel();
-                ((IElectricCar)this).Fuel();
+                ((ICar)this).Fuel();
             }else if (!_batteryCharged)
             {
                 ((IElectricCar)this).Fuel();
@@ -182,43 +161,30 @@ namespace Lab3b
             }
         }
 
-        public void Fuel()
-        {
-            ((ICar)this).Fuel();
-        }
-
         void IPetrolCar.Drive()
         {
-            if (_petrolTankFull && _combustionEngineRunning)
-            {
+            
                 _petrolTankFull = false;
                 Console.WriteLine("Driving car using combustion engine");
-            }else if (!_petrolTankFull)
-            {
-                Console.WriteLine("Not enough petrol, fuel up");
-            }else
-            {
-                Console.WriteLine("Combustion engine is not running");
-            }
+            
         }
 
         void IElectricCar.Drive()
         {
-            if (_batteryCharged && _electricEngineRunning)
-            {
+            
                 _batteryCharged=false;
                 Console.WriteLine("Driving car using electric engine");
-            }else if (!_electricEngineRunning)
-            {
-                Console.WriteLine("Not enough battery, charge");
-            }
-            else
-            {
-                Console.WriteLine("Electric engine is not running");
-            }
+            
         }
 
         void ICar.Drive()
+        {
+            _petrolTankFull = false;
+            _batteryCharged = false;
+            Console.WriteLine("Driving car using electric and petrol engine");
+        }
+
+        public void Drive()
         {
             if (_electricEngineRunning)
             {
@@ -245,11 +211,6 @@ namespace Lab3b
             {
                 Console.WriteLine("Neither electric nor petrol engine is running");
             }
-        }
-
-        public void Drive()
-        {
-            ((ICar)this).Drive();
         }
     }
 }
