@@ -2,33 +2,19 @@
 
 namespace Lab3b
 {
-    public class PetrolCar: ICar, IPetrolCar
+    public class PetrolCar : ICar, IPetrolCar
     {
-        private bool _isCombustionEngineRunning;
-
-        private bool _isPetrolTankFull;
-
-        public bool IsCombustionEngineRunning
-        {
-            get => _isCombustionEngineRunning;
-            set => _isCombustionEngineRunning = value;
-        }
-
-        public bool IsPetrolTankFull
-        {
-            get=>_isPetrolTankFull;
-            set=>_isPetrolTankFull = value;
-        }
         public PetrolCar()
         {
-            _isCombustionEngineRunning = false;
-            _isPetrolTankFull = false;
+            IsCombustionEngineRunning = false;
+            IsPetrolTankFull = false;
         }
+
         public void Start()
         {
-            if (!_isCombustionEngineRunning)
+            if (!IsCombustionEngineRunning)
             {
-                _isCombustionEngineRunning = true;
+                IsCombustionEngineRunning = true;
                 Console.WriteLine("Starting petrol car");
             }
             else
@@ -39,9 +25,9 @@ namespace Lab3b
 
         public void Stop()
         {
-            if (_isCombustionEngineRunning)
+            if (IsCombustionEngineRunning)
             {
-                _isCombustionEngineRunning = false;
+                IsCombustionEngineRunning = false;
                 Console.WriteLine("Stopping petrol car");
             }
             else
@@ -52,9 +38,9 @@ namespace Lab3b
 
         public void Fuel()
         {
-            if (!_isPetrolTankFull)
+            if (!IsPetrolTankFull)
             {
-                _isPetrolTankFull = true;
+                IsPetrolTankFull = true;
                 Console.WriteLine("Fueling up car with petrol");
             }
             else
@@ -65,18 +51,23 @@ namespace Lab3b
 
         public void Drive()
         {
-            if (_isPetrolTankFull && _isCombustionEngineRunning)
+            if (IsPetrolTankFull && IsCombustionEngineRunning)
             {
-                _isPetrolTankFull = false;
+                IsPetrolTankFull = false;
                 Console.WriteLine("Driving car on petrol");
-            }else if (!_isPetrolTankFull)
+            }
+            else if (!IsPetrolTankFull)
             {
                 Console.WriteLine("Not enough petrol, fuel up");
-            }else
+            }
+            else
             {
                 Console.WriteLine("Combustion engine is not running");
             }
-                
         }
+
+        public bool IsCombustionEngineRunning { get; set; }
+
+        public bool IsPetrolTankFull { get; set; }
     }
 }

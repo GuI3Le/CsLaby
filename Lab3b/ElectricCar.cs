@@ -4,32 +4,17 @@ namespace Lab3b
 {
     public class ElectricCar : ICar, IElectricCar
     {
-        private bool _electricEngineRunning;
-        private bool _batteryCharged;
-
-        public bool IsElectricEngineRunning
-        {
-            get=>_electricEngineRunning;
-            set => _electricEngineRunning=value;
-        }
-
-        public bool IsBatteryCharged
-        {
-            get=>_batteryCharged;
-            set => _batteryCharged = value;
-        }
-
         public ElectricCar()
         {
-            _electricEngineRunning=false;
-            _batteryCharged=false;
+            IsElectricEngineRunning = false;
+            IsBatteryCharged = false;
         }
 
         public void Start()
         {
-            if (!_electricEngineRunning)
+            if (!IsElectricEngineRunning)
             {
-                _electricEngineRunning=true;
+                IsElectricEngineRunning = true;
                 Console.WriteLine("Starting electric car");
             }
             else
@@ -40,9 +25,9 @@ namespace Lab3b
 
         public void Stop()
         {
-            if (_electricEngineRunning)
+            if (IsElectricEngineRunning)
             {
-                _electricEngineRunning=false;
+                IsElectricEngineRunning = false;
                 Console.WriteLine("Stopping electric car");
             }
             else
@@ -53,9 +38,9 @@ namespace Lab3b
 
         public void Fuel()
         {
-            if (!_batteryCharged)
+            if (!IsBatteryCharged)
             {
-                _batteryCharged=true;
+                IsBatteryCharged = true;
                 Console.WriteLine("Charging electric car");
             }
             else
@@ -66,11 +51,12 @@ namespace Lab3b
 
         public void Drive()
         {
-            if (_batteryCharged && _electricEngineRunning)
+            if (IsBatteryCharged && IsElectricEngineRunning)
             {
-                _batteryCharged=false;
+                IsBatteryCharged = false;
                 Console.WriteLine("Driving electric car");
-            }else if (!_electricEngineRunning)
+            }
+            else if (!IsElectricEngineRunning)
             {
                 Console.WriteLine("Not enough battery, charge");
             }
@@ -79,5 +65,9 @@ namespace Lab3b
                 Console.WriteLine("Car is not running");
             }
         }
+
+        public bool IsElectricEngineRunning { get; set; }
+
+        public bool IsBatteryCharged { get; set; }
     }
 }

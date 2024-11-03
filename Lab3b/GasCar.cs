@@ -4,32 +4,17 @@ namespace Lab3b
 {
     public class GasCar : ICar, IGasCar
     {
-        private bool _combustionEngineRunning;
-        private bool _gasCylinderFull;
-
-        public bool IsCombustionEngineRunning
-        {
-            get => _combustionEngineRunning;
-            set => _combustionEngineRunning = value;
-        }
-
-        public bool IsGasCylinderFull
-        {
-            get => _gasCylinderFull;
-            set => _gasCylinderFull = value;
-        }
-
         public GasCar()
         {
-            _combustionEngineRunning = false;
-            _gasCylinderFull = false;
+            IsCombustionEngineRunning = false;
+            IsGasCylinderFull = false;
         }
 
         public void Start()
         {
-            if (!_combustionEngineRunning)
+            if (!IsCombustionEngineRunning)
             {
-                _combustionEngineRunning = true;
+                IsCombustionEngineRunning = true;
                 Console.WriteLine("Starting gas car");
             }
             else
@@ -40,9 +25,9 @@ namespace Lab3b
 
         public void Stop()
         {
-            if (_combustionEngineRunning)
+            if (IsCombustionEngineRunning)
             {
-                _combustionEngineRunning = false;
+                IsCombustionEngineRunning = false;
                 Console.WriteLine("Stopping gas car");
             }
             else
@@ -53,9 +38,9 @@ namespace Lab3b
 
         public void Fuel()
         {
-            if (!_gasCylinderFull)
+            if (!IsGasCylinderFull)
             {
-                _gasCylinderFull = true;
+                IsGasCylinderFull = true;
                 Console.WriteLine("Fueling up car with gas");
             }
             else
@@ -66,11 +51,12 @@ namespace Lab3b
 
         public void Drive()
         {
-            if (_gasCylinderFull && _combustionEngineRunning)
+            if (IsGasCylinderFull && IsCombustionEngineRunning)
             {
-                _gasCylinderFull = false;
+                IsGasCylinderFull = false;
                 Console.WriteLine("Driving car on gas");
-            }else if (!_gasCylinderFull)
+            }
+            else if (!IsGasCylinderFull)
             {
                 Console.WriteLine("Not enough gas, fuel up");
             }
@@ -79,5 +65,9 @@ namespace Lab3b
                 Console.WriteLine("Combustion engine is not running");
             }
         }
+
+        public bool IsCombustionEngineRunning { get; set; }
+
+        public bool IsGasCylinderFull { get; set; }
     }
 }

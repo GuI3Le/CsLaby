@@ -9,8 +9,6 @@
             ((ICar)petrolElectricCar).Start();
             ((IElectricCar)petrolElectricCar).Start();
             ((IPetrolCar)petrolElectricCar).Start();
-            
-            
         }
     }
 }
