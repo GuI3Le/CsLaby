@@ -7,7 +7,7 @@ using System.IO;
 
 namespace CsLab1
 {
-    class Program
+    public class Program
     {
         static void Write_td(string s, StreamWriter sw, bool color) {
             if (color)
