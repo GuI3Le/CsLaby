@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Converter;
 
 namespace CsLab1
 {
     public class Program
     {
-        static void Write_td(string s, StreamWriter sw, bool color) {
+        /*static void Write_td(string s, StreamWriter sw, bool color) {
             if (color)
             {
                 sw.WriteLine("<td style='background-color: gray; border-collapse: collapse;'>" + s + "</td>");
@@ -23,10 +24,10 @@ namespace CsLab1
         static void Write_th(string s, StreamWriter sw)
         {
             sw.WriteLine("<th>" + s + "</th>");
-        }
+        }*/
         static void Main(string[] args)
         {
-            Console.WriteLine("Konwerter z CSV na HTML");
+            /*Console.WriteLine("Konwerter z CSV na HTML");
             string line = "";
             string path = "csvtohtml.csv";
             if (File.Exists(path))
@@ -88,7 +89,8 @@ namespace CsLab1
 
                 sr.Close();
                 sw.Close();
-            }
+            }*/
+            CsvToHtml.Convert("C:\\Users\\kamil\\source\\repos\\CsLaby\\CsLab1\\test_file.csv", "C:\\Users\\kamil\\source\\repos\\CsLaby\\CsLab1\\html_test.html");
         }
     }
 }
