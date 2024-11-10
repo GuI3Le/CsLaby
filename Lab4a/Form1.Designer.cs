@@ -95,6 +95,7 @@
             convertButton.TabIndex = 5;
             convertButton.Text = "Convert";
             convertButton.UseVisualStyleBackColor = true;
+            convertButton.Click += ConvertButtonClick;
             // 
             // browseButton
             // 
@@ -130,7 +131,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "CSV to HTML converter";
             ResumeLayout(false);
             PerformLayout();
         }

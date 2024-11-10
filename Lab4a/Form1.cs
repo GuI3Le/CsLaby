@@ -1,4 +1,5 @@
 using System.Windows.Forms;
+using Lab1Core;
 
 namespace Lab4a
 {
@@ -39,6 +40,16 @@ namespace Lab4a
                     outputTextBox.Text = htmlFilePath;
                 }
 
+            }
+        }
+
+        private void ConvertButtonClick(object sender, EventArgs e)
+        {
+            string inputFile = inputTextBox.Text;
+            string outputFile = outputTextBox.Text;
+            if (File.Exists(inputFile))
+            {
+                CsvToHtml.Convert(inputFile, outputFile);
             }
         }
 

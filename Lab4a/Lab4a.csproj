@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CsLab1\CsLab1.csproj" />
+    <ProjectReference Include="..\Lab1Core\Lab1Core.csproj" />
   </ItemGroup>
 
 </Project>
