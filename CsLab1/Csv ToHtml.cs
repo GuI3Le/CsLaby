@@ -11,7 +11,6 @@ namespace Converter
     {
         internal static string WriteTd(string s, bool color)
         {
-            string td = "";
             if (color)
             {
                 return "<td style='background-color: gray; border-collapse: collapse;'>" + s + "</td>";
