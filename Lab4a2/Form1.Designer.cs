@@ -37,7 +37,7 @@
             browseOutputButton = new Button();
             folderBrowserDialog2 = new FolderBrowserDialog();
             label3 = new Label();
-            button2 = new Button();
+            copyButton = new Button();
             SuspendLayout();
             // 
             // label1
@@ -64,7 +64,7 @@
             browseInputButton.TabIndex = 2;
             browseInputButton.Text = "Browse";
             browseInputButton.UseVisualStyleBackColor = true;
-            browseInputButton.Click += BrowseButtonClick;
+            browseInputButton.Click += BrowseInputButtonClick;
             // 
             // outputTextBox
             // 
@@ -90,7 +90,7 @@
             browseOutputButton.TabIndex = 5;
             browseOutputButton.Text = "Browse";
             browseOutputButton.UseVisualStyleBackColor = true;
-            browseOutputButton.Click += button1_Click;
+            browseOutputButton.Click += BrowseOutputButtonClick;
             // 
             // label3
             // 
@@ -102,21 +102,22 @@
             label3.TabIndex = 6;
             label3.Text = "Photo album";
             // 
-            // button2
+            // copyButton
             // 
-            button2.Location = new Point(263, 204);
-            button2.Name = "button2";
-            button2.Size = new Size(180, 54);
-            button2.TabIndex = 7;
-            button2.Text = "Copy photos";
-            button2.UseVisualStyleBackColor = true;
+            copyButton.Location = new Point(263, 204);
+            copyButton.Name = "copyButton";
+            copyButton.Size = new Size(180, 54);
+            copyButton.TabIndex = 7;
+            copyButton.Text = "Copy photos";
+            copyButton.UseVisualStyleBackColor = true;
+            copyButton.Click += CopyButtonClick;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
+            Controls.Add(copyButton);
             Controls.Add(label3);
             Controls.Add(browseOutputButton);
             Controls.Add(outputTextBox);
@@ -141,6 +142,6 @@
         private Button browseOutputButton;
         private FolderBrowserDialog folderBrowserDialog2;
         private Label label3;
-        private Button button2;
+        private Button copyButton;
     }
 }
