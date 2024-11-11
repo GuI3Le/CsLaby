@@ -364,3 +364,5 @@ FodyWeavers.xsd
 /CsLab1/test_file.csv
 /Lab4a/test_file.csv
 *.html
+/Lab4a2/source_photos
+/Lab4a2/result_photos
