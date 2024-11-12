@@ -49,7 +49,10 @@ namespace Lab4a2
             string filename = Path.GetFileNameWithoutExtension(path);
             string newFilename = $@"{date}_{sourceDir}_{filename}{EXTENSION}";
             string newPath = Path.Combine(resultFolderPath,newFilename);
-            File.Copy(path,newPath);
+            if (!File.Exists(path))
+            {
+                File.Copy(path, newPath);
+            }
         }
 
 
