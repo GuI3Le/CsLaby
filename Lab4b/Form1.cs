@@ -6,7 +6,6 @@ namespace Lab4b
         private double firstArgument = 0;
         private double secondArgument = 0;
         private string lastOperation = "";
-        //private string[] operations = ["CE", "C","=","%","+/-"];
         private string[] standardOperations = ["+","-","*","/"];
         public double memory;
 
@@ -30,15 +29,6 @@ namespace Lab4b
             Button clickedButton = sender as Button;
             if (clickedButton != null && inputTextBox.Text != "")
             {
-                /*secondArgument = double.Parse(inputTextBox.Text);
-                operationTextBox.Text = firstArgument.ToString() + lastOperation;
-                inputTextBox.Text = "";*/
-                if (inputTextBox.Text != "")
-                {
-                }
-
-                //lastOperation = (clickedButton.Text).ToString();
-                //operationTextBox.Text = $"{firstArgument.ToString()}{lastOperation}";
                 double result = 0;
                 string currentOperation = clickedButton.Text;
                 if (standardOperations.Contains(currentOperation))
@@ -55,13 +45,6 @@ namespace Lab4b
                 {
                     secondArgument = double.Parse(inputTextBox.Text);
                         operationTextBox.Text += $"{secondArgument} =";
-
-                    // else
-                    // {
-                    // operationTextBox.Text += " =";
-
-                    //
-                    // }
                     switch (lastOperation)
                     {
                         case "+":
@@ -76,17 +59,6 @@ namespace Lab4b
                         case "/":
                             result = firstArgument / secondArgument;
                             break;
-                        
-                        // case "=":
-                        //     inputTextBox.Text =
-                        //     break;
-                        // case "C":
-                        //     inputTextBox.Text = "";
-                        //     operationTextBox.Text = "";
-                        //     break;
-                        // case "CE":
-                        //     inputTextBox.Text = "";
-                        //     break;
                         default:
                             break;
 
@@ -111,7 +83,6 @@ namespace Lab4b
                                 break;
                         }
 
-                        //operationTextBox.Text += $"{secondArgument}";
                         inputTextBox.Text = secondArgument.ToString();
                     }
                     else

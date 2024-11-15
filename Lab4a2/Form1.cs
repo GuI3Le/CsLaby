@@ -18,7 +18,6 @@ namespace Lab4a2
                 if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
                 {
                     inputTextBox.Text = folderBrowserDialog.SelectedPath;
-                    // string[] photos = Directory.GetFiles(selectedFolder, "*.jpg");
                 }
             }
         }
@@ -49,10 +48,9 @@ namespace Lab4a2
             string filename = Path.GetFileNameWithoutExtension(path);
             string newFilename = $@"{date}_{sourceDir}_{filename}{EXTENSION}";
             string newPath = Path.Combine(resultFolderPath,newFilename);
-            if (!File.Exists(path))
-            {
-                File.Copy(path, newPath);
-            }
+           
+            File.Copy(path, newPath);
+
         }
 
 

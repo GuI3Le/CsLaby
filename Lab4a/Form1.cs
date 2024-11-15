@@ -49,7 +49,7 @@ namespace Lab4a
             string outputFile = outputTextBox.Text;
             if (File.Exists(inputFile))
             {
-                CsvToHtml.Convert(inputFile, outputFile);
+                Converter.CsvToHtml.Convert(inputFile, outputFile);
             }
         }
 

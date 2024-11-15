@@ -43,9 +43,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(370, 9);
+            label1.Location = new Point(423, 12);
             label1.Name = "label1";
-            label1.Size = new Size(130, 15);
+            label1.Size = new Size(162, 20);
             label1.TabIndex = 0;
             label1.Text = "CSV to HTML converter";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -53,33 +53,35 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(59, 63);
+            label2.Location = new Point(67, 84);
             label2.Name = "label2";
-            label2.Size = new Size(84, 15);
+            label2.Size = new Size(104, 20);
             label2.TabIndex = 1;
             label2.Text = "Path to csv file";
             // 
             // inputTextBox
             // 
-            inputTextBox.Location = new Point(165, 60);
+            inputTextBox.Location = new Point(189, 80);
+            inputTextBox.Margin = new Padding(3, 4, 3, 4);
             inputTextBox.Name = "inputTextBox";
-            inputTextBox.Size = new Size(558, 23);
+            inputTextBox.Size = new Size(637, 27);
             inputTextBox.TabIndex = 2;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(59, 109);
+            label3.Location = new Point(67, 145);
             label3.Name = "label3";
-            label3.Size = new Size(92, 15);
+            label3.Size = new Size(114, 20);
             label3.TabIndex = 3;
             label3.Text = "Path to html file";
             // 
             // outputTextBox
             // 
-            outputTextBox.Location = new Point(165, 106);
+            outputTextBox.Location = new Point(189, 141);
+            outputTextBox.Margin = new Padding(3, 4, 3, 4);
             outputTextBox.Name = "outputTextBox";
-            outputTextBox.Size = new Size(558, 23);
+            outputTextBox.Size = new Size(637, 27);
             outputTextBox.TabIndex = 4;
             // 
             // openFileDialog1
@@ -89,9 +91,10 @@
             // convertButton
             // 
             convertButton.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            convertButton.Location = new Point(370, 223);
+            convertButton.Location = new Point(423, 297);
+            convertButton.Margin = new Padding(3, 4, 3, 4);
             convertButton.Name = "convertButton";
-            convertButton.Size = new Size(130, 67);
+            convertButton.Size = new Size(178, 89);
             convertButton.TabIndex = 5;
             convertButton.Text = "Convert";
             convertButton.UseVisualStyleBackColor = true;
@@ -99,9 +102,10 @@
             // 
             // browseButton
             // 
-            browseButton.Location = new Point(729, 60);
+            browseButton.Location = new Point(833, 80);
+            browseButton.Margin = new Padding(3, 4, 3, 4);
             browseButton.Name = "browseButton";
-            browseButton.Size = new Size(81, 23);
+            browseButton.Size = new Size(93, 31);
             browseButton.TabIndex = 7;
             browseButton.Text = "Browse files";
             browseButton.UseVisualStyleBackColor = true;
@@ -109,9 +113,10 @@
             // 
             // saveButton
             // 
-            saveButton.Location = new Point(729, 106);
+            saveButton.Location = new Point(833, 141);
+            saveButton.Margin = new Padding(3, 4, 3, 4);
             saveButton.Name = "saveButton";
-            saveButton.Size = new Size(81, 23);
+            saveButton.Size = new Size(93, 31);
             saveButton.TabIndex = 8;
             saveButton.Text = "Save file";
             saveButton.UseVisualStyleBackColor = true;
@@ -119,9 +124,9 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(944, 450);
+            ClientSize = new Size(1079, 600);
             Controls.Add(saveButton);
             Controls.Add(browseButton);
             Controls.Add(convertButton);
@@ -130,6 +135,7 @@
             Controls.Add(inputTextBox);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "CSV to HTML converter";
             ResumeLayout(false);
