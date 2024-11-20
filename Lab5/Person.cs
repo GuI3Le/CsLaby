@@ -8,22 +8,22 @@ namespace Lab5
 {
     internal class Person
     {
-        private string name;
-        private string surname;
-        private DateTime birthDate;
-        private string gender;
+        public string name;
+        public string lastname;
+        public DateTime birthDate;
+        public string gender;
 
         public Person()
         {
             this.name = string.Empty;
-            this.surname = string.Empty;
+            this.lastname = string.Empty;
             this.birthDate = DateTime.MinValue;
             this.gender = string.Empty;
         }
         public Person(string name, string surname, DateTime birthDate, string gender)
         {
             this.name = name;
-            this.surname = surname;
+            this.lastname = surname;
             this.birthDate = birthDate;
             this.gender = gender;
         }
